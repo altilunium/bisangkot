@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Pocketmap</title>
+    <title>Bisangkot</title>
     <link rel="icon" href="logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="leaflet.css" />
     <script src="leaflet.js"></script>
     <script src="dexie.js"></script>
-    <script src="kiri.js"></script>
+    <script src="javaroute_overpass_jit.js"></script>
 
 <style>
 @font-face {
@@ -222,6 +222,18 @@ function onEachFeature(feature, layer) {
             an.innerHTML = "";
 
         });
+    layer.on('click', function(){
+        angkot.setStyle({
+            color:'transparent'
+        });
+        this.setStyle({
+                color: 'green',
+                zindex:'99'
+            });
+
+    })
+
+
 
     if (feature.properties && feature.properties.name) {
         layer.bindPopup(feature.properties.name);
@@ -249,6 +261,9 @@ var angkot = L.geoJSON(a, {
 
 
 L.control.scale().addTo(map);
+
+
+
 
 
 
