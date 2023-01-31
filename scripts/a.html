@@ -1,0 +1,110 @@
+
+<form id="ff">
+	<h1>Press submit and check the browser console</h1>
+    <p>It will download the relation data from Overpass API.</p>
+	<input type="submit" value="Submit" o>
+</form>
+<div id="placebo"></div>
+<div id="nyaa">___</div>
+
+
+
+<script>
+
+var form = document.getElementById("ff");
+form.addEventListener('submit', handleForm);
+async function handleForm(event) { 
+
+	event.preventDefault(); 
+	console.log("nyoo")
+
+
+getFetch()
+
+} 
+
+
+
+
+
+async function getFetch(){
+	console.log("Mashook!")
+var q = `[out:xml][timeout:90][bbox:-9.0044516,104.9743652,-5.7143798,114.7631836];
+(
+  nwr["name"]["type"="route"]["route"="bus"];
+  nwr["name"]["type"="route"]["route"="share_taxi"];
+);
+(._;>;);
+out meta;`
+
+
+// ril : -19.31114335506464,83.408203125,17.811456088564483,149.326171875
+
+//-6.336454944694203,106.87156677246094,-6.184928810497625,107.38655090332031
+
+q = "data="+encodeURIComponent(q)
+
+var data = new FormData()
+data.append('data',q)
+var uri = "https://overpass-api.de/api/interpreter"
+
+fetch(uri, {method:'POST', body:q,}).then(data => {
+        data.text().then(function (result){
+            console.log(result)
+
+            /*
+            parser = new DOMParser();
+            xmlDoc = parser.parseFromString(result,"text/xml");
+            console.log(xmlDoc)
+            a = document.getElementById("nyaa")
+            x = xmlDoc.getElementsByTagName("tag")
+            console.log(x)
+            var theString = ""
+            var isYes = false
+            var counter = 0
+            for(var i = 0 ; i<= x.length;i++){
+            	try{
+
+            		if (x[i].getAttribute("k") == "name"){
+            		console.log(x[i].getAttribute("v"))
+            		var id = x[i].parentNode.getAttribute("id")
+            		var ty = x[i].parentNode.tagName
+            		var u = "https://www.openstreetmap.org/"+ty+"/"+id
+           			
+           			var code = "* {{" + ty+"|"+id+"|"+x[i].getAttribute("v")+"}}"
+           			//theString = theString + code +"<br>"
+            		//theString = theString + "<a href="+u+">"+x[i].getAttribute("v")+"</a>"+ code+ "<br>"
+            		theString = theString + "<a href="+u+">"+code+"</a><br>"
+            		
+            		
+
+            		isYes=true
+            		counter = counter + 1
+
+
+            		 		}
+            	}
+            	catch(err){
+
+            	}
+            }
+
+            if (isYes) {
+            	theString = "Total " + counter + "<br>" + theString
+            }
+
+           a.innerHTML = theString
+           */
+
+           
+
+
+           
+
+
+        })
+    })
+}
+
+
+</script>
