@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="leaflet.css" />
     <script src="leaflet.js"></script>
     <script src="dexie.js"></script>
-    <script src="javaroute_overpass_jit.js"></script>
+    <script src="javaroute_overpass_jit2.js"></script>
 
 <style>
 @font-face {
@@ -147,11 +147,14 @@ var map = L.map('mapid',{ zoomControl: false }).setView({lat: -6.284500773276846
 //https://maps.omniscale.net/v2/{id}/style.grayscale/{z}/{x}/{y}.png
 //https://tile.tracestrack.com/_/{z}/{x}/{y}.png?key=fa2a6e930336f98bb7b22578e3c082b3
 
+    https://tile.openstreetmap.org/{z}/{x}/{y}.png
 L.tileLayer(
-  'https://tile.tracestrack.com/_/{z}/{x}/{y}.png?key=fa2a6e930336f98bb7b22578e3c082b3', {
+  'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    attribution: 'Data: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> Maps © <a href="https://www.tracestrack.com/">Tracestrack</a>'
+    attribution: 'Data: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> Maps'
   }).addTo(map);
+
+
 
 
 async function setFocus(){
