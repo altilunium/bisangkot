@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="leaflet.css" />
     <script src="leaflet.js"></script>
     <script src="dexie.js"></script>
-    <script src="javaroute_overpass_jit2.js"></script>
+    <script src="javaroute_overpass_jit3_s.js"></script>
 
 <style>
 @font-face {
@@ -151,7 +151,7 @@ var map = L.map('mapid',{ zoomControl: false }).setView({lat: -6.284500773276846
 L.tileLayer(
   'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    attribution: '<a href="https://github.com/altilunium/bisangkot/">bisangkot v23.1.31</a> |  Data: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> '
+    attribution: '<a href="https://github.com/altilunium/bisangkot/blob/main/release/v%2023.3.2.md">Bisangkot v23.3.2</a> | Basemap: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> '
   }).addTo(map);
 
 
@@ -261,6 +261,7 @@ const handleFeatureClick = (e) => {
 var angkot = L.geoJSON(a, {
     onEachFeature: onEachFeature
 }).addTo(map);
+
 
 
 L.control.scale().addTo(map);
