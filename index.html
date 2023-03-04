@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Bisangkot</title>
-    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="icon" href="https://raw.githubusercontent.com/altilunium/md/main/r/logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="leaflet.css" />
     <script src="leaflet.js"></script>
     <script src="dexie.js"></script>
-    <script src="javaroute_overpass_jit3_s.js"></script>
+    <script src="javaroute_overpass_jit3_s2.js"></script>
 
 <style>
 @font-face {
@@ -151,7 +151,7 @@ var map = L.map('mapid',{ zoomControl: false }).setView({lat: -6.284500773276846
 L.tileLayer(
   'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    attribution: '<a href="https://github.com/altilunium/bisangkot/blob/main/release/v%2023.3.2.md">Bisangkot v23.3.2</a> | Basemap: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> '
+    attribution: '<a href="https://github.com/altilunium/bisangkot/blob/main/release/latest.md">Bisangkot v23.3.4</a> | Basemap: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> '
   }).addTo(map);
 
 
@@ -202,39 +202,100 @@ attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap
 }).addTo(map);
 */
 
+
+var clickedState = false
+
+
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
 
+
+
+    
+    layer.on('click', function(e){
+        //this.setStyle(highlight)
+         var an = document.getElementById("angkot_name");
+         
+         if (feature.properties.id){
+            an.innerHTML = "<a target='_blank' href='http://osmlab.github.io/osm-deep-history/#/relation/"+feature.properties.id+"'>"+feature.properties.name+"</a>"
+         }
+         else{
+            an.innerHTML = "<a target='_blank' href='https://id.wikipedia.org/wiki/Angkutan_kota_di_Surabaya#Bemo_dalam_kota'>"+feature.properties.name+"</a>"
+         }
+
+
+        console.log(e.target)
+        e.target.feature.properties.highlight = true 
+        clickedState = true
+        map.eachLayer(function(l){
+            try {
+                if(!l.feature.properties.highlight){
+                map.removeLayer(l)
+                }
+            }
+            catch(err){
+                //
+            }
+            
+           
+            
+            
+        })
+        //hideLayers();
+    })
+
+    map.on('click', function(e){
+        map.eachLayer(function(l){
+            try{
+                if(l.feature.properties.highlight){
+                l.feature.properties.highlight = false
+                }
+            }
+            catch(err){
+
+            }
+        })
+        map.addLayer(layer)
+        clickedState = false
+        var an = document.getElementById("angkot_name");
+        an.innerHTML = ""
+        //showLayers();
+    })
+    
+
     layer.on('mouseover', function () {
+        
         angkot.setStyle({
             color:'transparent'
         });
+        
             this.setStyle({
-                color: 'green',
-                zindex:'99'
+                color: 'green'
             });
+
             var an = document.getElementById("angkot_name");
-            an.innerHTML = feature.properties.name;
+         
+         if (feature.properties.id){
+            an.innerHTML = "<a target='_blank' href='http://osmlab.github.io/osm-deep-history/#/relation/"+feature.properties.id+"'>"+feature.properties.name+"</a>"
+         }
+         else{
+            an.innerHTML = "<a target='_blank' href='https://id.wikipedia.org/wiki/Angkutan_kota_di_Surabaya#Bemo_dalam_kota'>"+feature.properties.name+"</a>"
+         }
             console.log(feature.properties.name)
         });
+
         layer.on('mouseout', function () {
             angkot.setStyle({
                 color:'#3387ff'
             });
             var an = document.getElementById("angkot_name");
-            an.innerHTML = "";
+            if (!clickedState){
+                an.innerHTML = "";
+            }
+            
 
         });
-    layer.on('click', function(){
-        angkot.setStyle({
-            color:'transparent'
-        });
-        this.setStyle({
-                color: 'green',
-                zindex:'99'
-            });
 
-    })
 
 
 
