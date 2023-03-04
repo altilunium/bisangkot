@@ -5,7 +5,7 @@ import random
 import math
 
 
-tree = ET.parse('allrelation2.xml')
+tree = ET.parse('allrelation3.xml')
 
 nodeDB = dict()
 wayDB = dict()
@@ -91,6 +91,7 @@ for i in jitRoute:
 	newy['type'] = "Feature"
 	newy['properties'] = {}	
 	newy['properties']['name'] = relationDB[i]['name']
+	newy['properties']['id'] = i
 	newy['geometry'] = {}
 	newy['geometry']['type'] = "MultiLineString"
 	newy['geometry']['coordinates'] = jitRoute[i]
