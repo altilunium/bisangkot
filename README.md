@@ -1,7 +1,9 @@
 # bisangkot
 Open public-transportation database
 
-* https://altilunium.github.io/bisangkot 
+* Map-view : https://altilunium.github.io/bisangkot 
+* Tabular-view : https://routes.tracestrack.com/id/bus/all/
+
 
 ### How to contribute
 Make route relation on OpenStreetMap.
