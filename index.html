@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="leaflet.css" />
     <script src="leaflet.js"></script>
     <script src="dexie.js"></script>
-    <script src="4.js"></script>
+    <script src="javaroute_overpass_jit3_s3.js"></script>
 
 <style>
 @font-face {
@@ -218,6 +218,9 @@ function onEachFeature(feature, layer) {
          
          if (feature.properties.id){
             an.innerHTML = "<a target='_blank' href='http://osmlab.github.io/osm-deep-history/#/relation/"+feature.properties.id+"'>"+feature.properties.name+"</a>"
+         }
+         else if (feature.properties.d){
+            an.innerHTML = "<a target='_blank' href='https://www.transit.land/operators/o-qqgu-pttransportasijakarta#map'>"+feature.properties.name+"</a>"
          }
          else{
             an.innerHTML = "<a target='_blank' href='https://id.wikipedia.org/wiki/Angkutan_kota_di_Surabaya#Bemo_dalam_kota'>"+feature.properties.name+"</a>"
