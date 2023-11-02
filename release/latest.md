@@ -1,3 +1,6 @@
+# v 23.11.2
+* Additional data update : Transjakarta static GTFS (November 2nd, 2023, 22.20 UTC+7) https://gtfs.transjakarta.co.id/files/file_gtfs.zip
+
 # v 23.3.4
 * Click a line to "lock" the view. Then click the map to refresh view.
 * Link to OSM Relation history 
