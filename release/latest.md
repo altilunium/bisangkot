@@ -1,5 +1,5 @@
 # v 23.12.14
-* Overpass data update : December 14th, 2023. 17.22 UTC+7
+* Overpass data update : December 14th, 2023. 17.22 UTC+7 (see full list [here](https://github.com/altilunium/bisangkot/wiki/v23.12.14) 
 
 # v 23.11.2
 * Additional data update : Transjakarta static GTFS (November 2nd, 2023, 22.20 UTC+7) https://gtfs.transjakarta.co.id/files/file_gtfs.zip
