@@ -1,10 +1,13 @@
+# v 23.12.14
+* Overpass data update : December 14th, 2023. 17.22 UTC+7
+
 # v 23.11.2
 * Additional data update : Transjakarta static GTFS (November 2nd, 2023, 22.20 UTC+7) https://gtfs.transjakarta.co.id/files/file_gtfs.zip
 
 # v 23.3.4
 * Click a line to "lock" the view. Then click the map to refresh view.
 * Link to OSM Relation history 
-* Overpass data update : March 4th, 2023, 23.09 UTC+7
+* Overpass data update : March 4th, 2023. 23.09 UTC+7
 
 # v 23.3.2
 * Overpass data update :  March 2nd, 2023. 13.19 UTC+7
