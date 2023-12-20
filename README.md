@@ -26,3 +26,6 @@ route:share_taxi
 * Copy the relation data from previous step to text editor, save it as xml file.
 * Open `/scripts/allrel.py`, configure `line 8` to that xml file. Run it, save the output as .js file.
 * Open `index.html`, configure `line 11` to that .js file
+
+### Fork this project to include your country
+See [this guide](https://www.openstreetmap.org/user/rtnf/diary/403040)
