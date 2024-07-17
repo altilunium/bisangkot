@@ -1,6 +1,11 @@
+# v 24.07.17
+* Archived `Transjakarta static GTFS` (added on v23.11.2), `Surabaya` (added on v23.3.2) and `Malaysia` (added on v23.12.20)
+* Improved init script performance (XML to JSON migration)
+* Overpass data update : July 17th, 2024. 21.53 UTC+7 (see full list [here](https://github.com/altilunium/bisangkot/wiki/v24.07.17)
+
 # v 23.12.20
 * Now including [Malaysia](https://www.openstreetmap.org/user/rtnf/diary/403040) (See [list](https://github.com/altilunium/bisangkot/wiki/v23.12.20))
-* Full dataset : [14des_en.geojson](https://github.com/altilunium/bisangkot/blob/main/14des_en.geojson) 
+* Full dataset : [14des_en.geojson](https://github.com/altilunium/bisangkot/blob/main/14des_en.geojson) (16,5 MB)
 
 # v 23.12.14
 * Overpass data update : December 14th, 2023. 17.22 UTC+7 (see full list [here](https://github.com/altilunium/bisangkot/wiki/v23.12.14))
