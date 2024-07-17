@@ -1,5 +1,5 @@
 # v 24.07.17
-* Archived `Transjakarta static GTFS` (added on v23.11.2), `Surabaya` (added on v23.3.2) and `Malaysia` (added on v23.12.20)
+* [Archived](https://altilunium.github.io/bisangkot/v231214.html) `Transjakarta static GTFS` (added on v23.11.2), `Surabaya` (added on v23.3.2).
 * Improved init script performance (XML to JSON migration)
 * Overpass data update : July 17th, 2024. 21.53 UTC+7 (see full list [here](https://github.com/altilunium/bisangkot/wiki/v24.07.17))
 * Full dataset : [v240717.js](https://github.com/altilunium/bisangkot/blob/main/v240717.js) (24 MB)
