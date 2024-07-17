@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Download OSM Data</h2>
+
+<button onclick="downloadData()">Download Data</button>
+
+<script>
+function downloadData() {
+  var query = `
+    [out:json][timeout:9000];
+    area[name="Indonesia"]->.searchArea;
+    (
+      relation["route"="bus"](area.searchArea);
+      relation["route"="share_taxi"](area.searchArea);
+    );
+    out body;
+    >;
+    out skel qt;
+  `;
+
+  var url = 'https://overpass-api.de/api/interpreter?data=' + encodeURIComponent(query);
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+      var downloadAnchorNode = document.createElement('a');
+      downloadAnchorNode.setAttribute("href",     dataStr);
+      downloadAnchorNode.setAttribute("download", "osm_data.json");
+      document.body.appendChild(downloadAnchorNode); // required for firefox
+      downloadAnchorNode.click();
+      downloadAnchorNode.remove();
+    });
+}
+</script>
+
+</body>
+</html>
