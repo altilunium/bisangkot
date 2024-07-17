@@ -1,5 +1,6 @@
 # v 23.12.20
 * Now including [Malaysia](https://www.openstreetmap.org/user/rtnf/diary/403040) (See [list](https://github.com/altilunium/bisangkot/wiki/v23.12.20))
+* Full dataset : [14des_en.geojson](https://github.com/altilunium/bisangkot/blob/main/14des_en.geojson) 
 
 # v 23.12.14
 * Overpass data update : December 14th, 2023. 17.22 UTC+7 (see full list [here](https://github.com/altilunium/bisangkot/wiki/v23.12.14))
