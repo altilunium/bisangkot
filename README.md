@@ -27,5 +27,7 @@ route:share_taxi
 * Open `/scripts/allrel.py`, configure `line 8` to that xml file. Run it, save the output as .js file.
 * Open `index.html`, configure `line 11` to that .js file
 
+*A lightweight JSON alternativ of this script is available at  `/scripts/a-json.html` and `/scripts/allrel-json.py`*.
+
 ### Fork this project to include your country
 See [this guide](https://www.openstreetmap.org/user/rtnf/diary/403040)
