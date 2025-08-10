@@ -2,7 +2,9 @@
 Open public-transportation database
 
 * Map-view : https://altilunium.github.io/bisangkot 
-* Tabular-view : https://routes.tracestrack.com/id/bus/all/
+* Tabular-view :
+  * https://routes.tracestrack.com/id/bus/all/
+  * https://routes.tracestrack.com/?page=1&country=INDONESIA
 
 
 ### How to contribute
